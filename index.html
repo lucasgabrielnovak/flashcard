@@ -1,49 +1,42 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="">
-    <title>flashcard</title>
-</head>
-
-<body>
-    <main>
-        <section id="container">
-            <article class="cartao">
-                <div class="cartao__conteudo">
-                    <h3>Programação</h3>
-                    <div class="cartao__conteudo__pergunta">
-                        O que é css?
-
-                    </div>
-
-                    <div class="cartao__conteudo__resposta">
-
-                        O css é uma linguagem de estilização.
-                        
-                    </div>
-                </div>
-            </article>
-
-
-        </section>
-    </main>
-    <footer>
-
-
-
-    </footer>
-
-    <p>projeto desmvolvido pelo alura, sem fins lucrativo
-
-    </p>
-
-
-
-
-
-</body>
-
-</html>
+<button id="botao-acessibilidade" class="btn btn-primary fw-bold">acessibilidade</button>
+<div id="acessibilidade">
+    <button id="botao-acessibilidade" class="btn btn-primary fw-bold">acessibilidade</button>
+    <div id="opcoes-acessibilidade">
+      <button id="aumentar-fonte" class="btn btn-primary fw-bold">A+</button>
+      <button id="diminuir-fonte" class="btn btn-primary fw-bold">A-</button>
+    </div>
+  </div>
+  <div id="acessibilidade" class="menu-acessibilidade">
+    <button id="botao-acessibilidade" class="btn btn-primary fw-bold rotacao-botao">acessibilidade</button>
+    <div id="opcoes-acessibilidade" class="opcoes-acessibilidade apresenta-lista">
+      <button id="aumentar-fonte" class="btn btn-primary fw-bold">A+</button>
+      <button id="diminuir-fonte" class="btn btn-primary fw-bold">A-</button>
+    </div>
+  </div>
+  .menu-acessibilidade{
+    position: fixed;
+    top:2rem;
+    right:20px;
+    z-index: 1000;
+}
+.rotacao-botao{
+    transform: rotate(-90deg);
+    transform-origin: right center;
+}
+.opcoes-acessibilidade{
+    margin-top:10px;
+    display: flex;
+    flex-direction: column;
+}
+.opcoes-acessibilidade button{
+    margin-bottom: 5px;
+}
+.apresenta-lista{
+    display: none;
+}
+const botaoDeAcessibilidade = document.getElementById('botao-acessibilidade')
+const opcoesDeAcessibilidade = document.getElementById('opcoes-acessibilidade')
+botaoDeAcessibilidade.addEventListener('click', function (){
+    botaoDeAcessibilidade.classList.toggle('rotacao-botao');
+    opcoesDeAcessibilidade.classList.toggle('apresenta-lista')
+   })
